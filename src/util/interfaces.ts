@@ -1,4 +1,6 @@
-export interface params_interface {}
+export interface params_interface {
+	q: string;
+}
 
 export interface user_raw_interface {
 	id: number;
