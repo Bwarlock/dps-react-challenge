@@ -21,8 +21,8 @@ const userTableColumns = [
 	},
 	{
 		title: 'Birthday',
-		dataIndex: 'birthday',
-		key: 'birthday',
+		dataIndex: 'birthdate',
+		key: 'birthdate',
 		width: 200,
 		// align: 'center',
 	},
@@ -36,7 +36,13 @@ function UserTable() {
 		getUsers();
 	}, []);
 	return (
-		<Table size="middle" columns={userTableColumns} dataSource={users} />
+		<Table
+			className="user-table"
+			size="middle"
+			columns={userTableColumns}
+			dataSource={users}
+			pagination={false}
+		/>
 	);
 }
 
