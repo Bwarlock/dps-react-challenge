@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useGetData } from '../api/hooks';
 import { Table } from 'antd';
 import { useSelector } from 'react-redux';
@@ -30,13 +30,23 @@ const userTableColumns = [
 
 function UserTable() {
 	const { getUsers } = useGetData();
-	const { users } = useSelector((state: RootState) => state.users);
+	const {
+		users: defaultUsers,
+		loading,
+		selected_city,
+	} = useSelector((state: RootState) => state.users);
+	const users = useMemo(() => {
+		return selected_city
+			? defaultUsers.filter((user) => user.city === selected_city)
+			: defaultUsers;
+	}, [defaultUsers, selected_city]);
 
 	useEffect(() => {
 		getUsers();
 	}, []);
 	return (
 		<Table
+			loading={loading}
 			className="user-table"
 			size="middle"
 			columns={userTableColumns}

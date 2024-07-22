@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { user_slice_interface } from '../util/interfaces';
 
-const initialValue = {
+const initialValue: user_slice_interface = {
 	users: [],
 	cities: [],
 	selected_city: '',

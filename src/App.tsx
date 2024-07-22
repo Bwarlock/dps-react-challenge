@@ -1,6 +1,7 @@
 import dpsLogo from './assets/DPS.svg';
 import './App.css';
 import UserTable from './components/UserTable';
+import FilterBar from './components/FilterBar';
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 				</a>
 			</div>
 			<div className="home-card">
+				<FilterBar />
 				<UserTable />
 			</div>
 		</>
