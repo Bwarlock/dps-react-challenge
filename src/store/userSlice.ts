@@ -6,6 +6,8 @@ const initialValue: user_slice_interface = {
 	cities: [],
 	selected_city: '',
 	loading: false,
+	oldest_in_city: {},
+	highlight_oldest_in_city: false,
 };
 
 const userSlice = createSlice({
@@ -24,9 +26,21 @@ const userSlice = createSlice({
 		storeLoading: (state, action) => {
 			state.loading = action.payload;
 		},
+		storeOldest_in_city: (state, action) => {
+			state.oldest_in_city = action.payload;
+		},
+		storeHighlight_oldest_in_city: (state, action) => {
+			state.highlight_oldest_in_city = action.payload;
+		},
 	},
 });
 
-export const { storeUsers, storeCities, storeSelected_city, storeLoading } =
-	userSlice.actions;
+export const {
+	storeUsers,
+	storeCities,
+	storeSelected_city,
+	storeLoading,
+	storeOldest_in_city,
+	storeHighlight_oldest_in_city,
+} = userSlice.actions;
 export default userSlice.reducer;

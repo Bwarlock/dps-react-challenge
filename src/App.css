@@ -61,3 +61,7 @@
 	height: 32px !important;
 	width: 32px !important;
 }
+
+.highlight {
+	background-color: #a4d8ff;
+}

@@ -27,4 +27,6 @@ export interface user_slice_interface {
 	cities: city_select_interface[];
 	selected_city: city_select_interface['value'];
 	loading: boolean;
+	oldest_in_city: { [key: string]: string };
+	highlight_oldest_in_city: boolean;
 }

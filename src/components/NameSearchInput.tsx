@@ -8,9 +8,7 @@ function NameSearchInput() {
 
 	useEffect(() => {
 		const handler: ReturnType<typeof setTimeout> = setTimeout(() => {
-			if (value) {
-				getUsers({ q: value });
-			}
+			getUsers({ q: value });
 		}, 1000); // 1000ms (1 second) timeout
 
 		return () => {
