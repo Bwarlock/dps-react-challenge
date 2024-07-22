@@ -4,6 +4,7 @@ const initialValue = {
 	users: [],
 	cities: [],
 	selected_city: '',
+	loading: false,
 };
 
 const userSlice = createSlice({
@@ -19,9 +20,12 @@ const userSlice = createSlice({
 		storeSelected_city: (state, action) => {
 			state.selected_city = action.payload;
 		},
+		storeLoading: (state, action) => {
+			state.loading = action.payload;
+		},
 	},
 });
 
-export const { storeUsers, storeCities, storeSelected_city } =
+export const { storeUsers, storeCities, storeSelected_city, storeLoading } =
 	userSlice.actions;
 export default userSlice.reducer;

@@ -6,10 +6,9 @@ const AxiosInstance = axios.create({
 	baseURL: BASE_URL,
 });
 
-export function getUsers(params) {
+export function GetUsers() {
 	return AxiosInstance({
 		method: 'get',
 		url: '/users',
-		params: params,
 	});
 }
